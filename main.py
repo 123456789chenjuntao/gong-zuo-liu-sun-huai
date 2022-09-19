@@ -147,8 +147,8 @@ def get_counter_left(aim_date):
     if next < nowtime:
        next = next.replace(year=next.year+1)
     return (next - today).days
-  
- def split_birthday():
+
+def split_birthday():
     if birthday is None:
         return None
     return birthday.split('\n')
