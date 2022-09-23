@@ -83,6 +83,8 @@ def get_weather_2():
 def get_weather_3():
     url = "http://wthrcdn.etouch.cn/WeatherApi?city=" + city
     res3 = requests.get(url)
+    if res3.status_code != 200:
+        return res3
     res31 = xmltodict.parse(res3.text)['resp']
     res311 = res31['forecast']['weather']
     res312 = res31['zhishus']['zhishu']
